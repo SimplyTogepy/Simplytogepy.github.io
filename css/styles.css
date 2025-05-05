@@ -16,18 +16,34 @@ body {
   font-family: 'Wasted Vindey', serif;
   background-color: #fff7f9;
   color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-.font-littlebubble {
+h1, h2, h3, h4, h5, h6, nav a, .font-littlebubble {
   font-family: 'Little Bubble', cursive;
 }
 
+nav a {
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ec4899;
+}
+
 a {
+  color: #ec4899;
+  text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ec4899;
+  color: #db2777;
 }
 
 img.rounded {
@@ -36,4 +52,60 @@ img.rounded {
 
 img.shadow-lg {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  padding: 5rem 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-pink-600 {
+  color: #ec4899;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-pink-50 {
+  background-color: #fff7f9;
+}
+
+.bg-pink-100 {
+  background-color: #ffe4e9;
+}
+
+.border-pink-200 {
+  border-color: #fbcfe8;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px rgba(0,0,0,0.1);
 }
