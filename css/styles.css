@@ -1,7 +1,10 @@
-/* Google fallback serif fonts (optional) */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@font-face {
+  font-family: 'Wasted Vindey';
+  src: url('../fonts/Wasted-Vindey.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
-/* Local custom fonts */
 @font-face {
   font-family: 'Little Bubble';
   src: url('../fonts/LittleBubble-Regular.woff') format('woff');
@@ -9,25 +12,28 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Hello Daisy';
-  src: url('../fonts/HelloDaisy.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Default font styles */
 body {
-  font-family: 'Little Bubble', 'Libre Baskerville', serif;
+  font-family: 'Wasted Vindey', serif;
+  background-color: #fff7f9;
+  color: #333;
 }
 
-/* Use Hello Daisy for the header name only */
-.font-hellodaisy {
-  font-family: 'Hello Daisy', cursive;
-}
-
-/* Optional utility classes for reuse */
 .font-littlebubble {
   font-family: 'Little Bubble', cursive;
 }
 
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ec4899;
+}
+
+img.rounded {
+  border-radius: 0.75rem;
+}
+
+img.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
