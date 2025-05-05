@@ -187,6 +187,59 @@
     </p>
   </section>
 
+  <!-- 🌏 Travel Journal -->
+<section id="travel-journal" class="py-24 px-6 max-w-6xl mx-auto bg-gradient-to-br from-pink-50 via-rose-100 to-amber-50 border-y border-pink-200">
+  <h2 class="text-4xl font-littlebubble text-pink-700 text-center mb-12">My Global Footprints ✨</h2>
+
+  <!-- Thailand Section -->
+  <div class="mb-16">
+    <h3 class="text-3xl font-littlebubble text-rose-600 mb-4">Thailand: A Love Affair With Life</h3>
+    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      The first time I visited Thailand, I fell in love—with the warmth of its people, the vibrancy of the culture, and the soul-hugging flavors of the food. From golden temples to emerald jungles and beach sunsets, every moment awakened a part of me that longed for color, kindness, and calm.
+    </p>
+    <!-- Thailand Slideshow -->
+    <div class="overflow-hidden rounded-xl shadow-lg border border-pink-200">
+      <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory" style="scrollbar-width: none;">
+        <!-- Add your Thailand images here -->
+        <img src="./images/thailand1.jpg" alt="Thailand Trip 1" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+        <img src="./images/thailand2.jpg" alt="Thailand Trip 2" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+        <img src="./images/thailand3.jpg" alt="Thailand Trip 3" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Istanbul Section -->
+  <div class="mb-16">
+    <h3 class="text-3xl font-littlebubble text-pink-600 mb-4">Istanbul: Dreams in Stone and Sky</h3>
+    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      Istanbul was a dream made real. I stood in awe beneath ancient domes I had only studied in books, and wandered through bazaars humming with life. I made lifelong friends, shared tea under lantern-lit skies, and networked with bold, brilliant souls reshaping Turkey’s future.
+    </p>
+    <!-- Istanbul Slideshow -->
+    <div class="overflow-hidden rounded-xl shadow-lg border border-pink-200">
+      <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory" style="scrollbar-width: none;">
+        <!-- Add your Istanbul images here -->
+        <img src="./images/istanbul1.jpg" alt="Istanbul Trip 1" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+        <img src="./images/istanbul2.jpg" alt="Istanbul Trip 2" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+        <img src="./images/istanbul3.jpg" alt="Istanbul Trip 3" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendation Form -->
+  <div class="bg-white rounded-2xl p-8 shadow-md border border-pink-200">
+    <h4 class="text-2xl font-littlebubble text-pink-700 mb-4">Where should I wander next? 🧚‍♀️</h4>
+    <form name="recommend-travel" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="recommend-travel">
+      <div class="grid gap-4 sm:grid-cols-2">
+        <input type="text" name="name" required placeholder="Your Name" class="p-3 border border-pink-300 rounded-lg w-full" />
+        <input type="email" name="email" required placeholder="Your Email" class="p-3 border border-pink-300 rounded-lg w-full" />
+      </div>
+      <textarea name="recommendation" rows="4" required placeholder="Suggest a place and tell me why!" class="mt-4 p-3 border border-pink-300 rounded-lg w-full"></textarea>
+      <button type="submit" class="mt-4 bg-pink-600 text-white px-6 py-3 rounded-full font-littlebubble hover:bg-pink-700 transition">Send Your Suggestion ✈️</button>
+    </form>
+  </div>
+</section>
+  
   <section id="contact" class="bg-white py-20 px-6 text-center">
     <h3 class="text-4xl font-semibold mb-4 text-pink-700 font-littlebubble">Let’s Collaborate</h3>
     <p class="mb-6 text-gray-700 text-lg">I welcome new ideas and meaningful work — let’s build something beautiful together.</p>
