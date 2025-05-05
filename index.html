@@ -6,14 +6,7 @@
   <title>Celeste Greene | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => AOS.init());
-  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
-
     @font-face {
       font-family: 'Wasted Vindey';
       src: url('./fonts/Wasted-Vindey.woff2') format('woff2');
@@ -24,52 +17,72 @@
     }
 
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: radial-gradient(ellipse at top, #fff7f9 0%, #fde2f3 100%);
+      font-family: 'Wasted Vindey', serif;
+      background-color: #fff7f9;
       color: #333;
-      overflow-x: hidden;
+      position: relative;
     }
 
     .font-littlebubble {
-      font-family: 'Pacifico', cursive;
+      font-family: 'Little Bubble', cursive;
     }
 
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #fff0f5;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #f9a8d4;
-      border-radius: 6px;
+    .carousel-glow {
+      position: relative;
+      border: 2px solid #fbcfe8;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fff0f5 0%, #fdf6ff 100%);
+      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.15);
     }
 
-    a {
-      transition: all 0.3s ease-in-out;
-    }
-    a:hover {
-      color: #d946ef;
-      transform: scale(1.05);
+    .carousel-glow::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+      background-repeat: repeat;
+      background-size: 150px 150px;
+      pointer-events: none;
+      animation: sparkle 8s linear infinite;
+      opacity: 0.3;
+      z-index: 5;
     }
 
-    .sparkle {
+    .carousel-glow img {
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 10;
+      position: relative;
+    }
+
+    .carousel-glow img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(255, 192, 203, 0.35);
+    }
+
+    @keyframes sparkle {
+      0% {
+        background-position: 0 0;
+        opacity: 0.5;
+      }
+      100% {
+        background-position: 200% 0;
+        opacity: 1;
+      }
+    }
+
+    canvas.sparkle-canvas {
       position: fixed;
-      width: 2px;
-      height: 2px;
-      background: #fff;
-      box-shadow: 0 0 5px #fff, 0 0 10px #f9a8d4, 0 0 15px #fcd34d;
-      animation: twinkle 2s infinite ease-in-out;
-      z-index: 0;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 999;
     }
   </style>
 </head>
-<body class="bg-pink-50 text-gray-900 relative">
+<body class="bg-pink-50 text-gray-900">
+  <canvas class="sparkle-canvas"></canvas>
 
    <!-- Floating sparkles background -->
   <script>
@@ -198,8 +211,8 @@
       The first time I visited Thailand, I fell in love—with the warmth of its people, the vibrancy of the culture, and the soul-hugging flavors of the food. From golden temples to emerald jungles and beach sunsets, every moment awakened a part of me that longed for color, kindness, and calm.
     </p>
     <!-- Thailand Slideshow -->
-    <div class="overflow-hidden rounded-xl shadow-lg border border-pink-200">
-      <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory" style="scrollbar-width: none;">
+    <div class="carousel-glow mb-6">
+  <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-4">
         <!-- Add your Thailand images here -->
         <img src="./images/thailand1.jpg" alt="Thailand Trip 1" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
         <img src="./images/thailand2.jpg" alt="Thailand Trip 2" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
@@ -215,8 +228,8 @@
       Istanbul was a dream made real. I stood in awe beneath ancient domes I had only studied in books, and wandered through bazaars humming with life. I made lifelong friends, shared tea under lantern-lit skies, and networked with bold, brilliant souls reshaping Turkey’s future.
     </p>
     <!-- Istanbul Slideshow -->
-    <div class="overflow-hidden rounded-xl shadow-lg border border-pink-200">
-      <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory" style="scrollbar-width: none;">
+    <div class="carousel-glow mb-6">
+  <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-4">
         <!-- Add your Istanbul images here -->
         <img src="./images/istanbul1.jpg" alt="Istanbul Trip 1" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
         <img src="./images/istanbul2.jpg" alt="Istanbul Trip 2" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
@@ -253,5 +266,46 @@
   <footer class="text-center py-6 text-sm text-pink-500 border-t border-pink-200">
     © 2025 Celeste Greene. Code MIT-licensed. All other content and branding reserved.
   </footer>
+  <script>
+    const canvas = document.querySelector(".sparkle-canvas");
+    const ctx = canvas.getContext("2d");
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const sparkles = Array.from({ length: 100 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.5 + 0.5,
+      speedY: Math.random() * 0.6 + 0.2,
+      alpha: Math.random(),
+    }));
+
+    function drawSparkles() {
+      ctx.clearRect(0, 0, width, height);
+      sparkles.forEach(s => {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 182, 193, ${s.alpha})`;
+        ctx.fill();
+        s.y += s.speedY;
+        if (s.y > height) {
+          s.y = 0;
+          s.x = Math.random() * width;
+        }
+      });
+      requestAnimationFrame(drawSparkles);
+    }
+
+    drawSparkles();
+
+    window.addEventListener("resize", () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  </script>
 </body>
 </html>
