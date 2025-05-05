@@ -6,29 +6,84 @@
   <title>Celeste Greene | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => AOS.init());
+  </script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
+
     @font-face {
       font-family: 'Wasted Vindey';
       src: url('./fonts/Wasted-Vindey.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
     }
     @font-face {
       font-family: 'Little Bubble';
       src: url('./fonts/LittleBubble-Regular.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
     }
+
     body {
-      font-family: 'Wasted Vindey', serif;
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(ellipse at top, #fff7f9 0%, #fde2f3 100%);
+      color: #333;
+      overflow-x: hidden;
     }
+
     .font-littlebubble {
-      font-family: 'Little Bubble', cursive;
+      font-family: 'Pacifico', cursive;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fff0f5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f9a8d4;
+      border-radius: 6px;
+    }
+
+    a {
+      transition: all 0.3s ease-in-out;
+    }
+    a:hover {
+      color: #d946ef;
+      transform: scale(1.05);
+    }
+
+    .sparkle {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      box-shadow: 0 0 5px #fff, 0 0 10px #f9a8d4, 0 0 15px #fcd34d;
+      animation: twinkle 2s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
     }
   </style>
 </head>
-<body class="bg-pink-50 text-gray-900">
+<body class="bg-pink-50 text-gray-900 relative">
 
+   <!-- Floating sparkles background -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      for (let i = 0; i < 50; i++) {
+        const sparkle = document.createElement("div");
+        sparkle.className = "sparkle";
+        sparkle.style.top = Math.random() * 100 + "vh";
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.animationDelay = `${Math.random() * 5}s`;
+        document.body.appendChild(sparkle);
+      }
+    });
+  </script>
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <h1 class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</h1>
