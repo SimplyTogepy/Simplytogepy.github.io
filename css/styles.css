@@ -1,48 +1,46 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&family=Libre+Baskerville&display=swap');
+/* styles.css */
 
-/* Local font files — ensure these are in /fonts/ folder */
+/* Font Imports */
 @font-face {
-  font-family: 'Domestic Script';
-  src: url('../fonts/DomesticScript.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Shooting Star';
-  src: url('../fonts/ShootingStar.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Little Bubble';
-  src: url('../fonts/LittleBubble-Regular.woff') format('woff');
+  font-family: 'Wasted Vindey';
+  src: url('../fonts/Wasted-Vindey.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Hello Daisy';
   src: url('../fonts/HelloDaisy.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Utility font classes */
+/* Base Typography */
 body {
-  font-family: 'Domestic Script', cursive;
+  font-family: 'Wasted Vindey', serif;
+  background-color: #fff7f7; /* soft pink */
+  color: #1f2937; /* gray-900 */
+  line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Hello Daisy', cursive;
-}
-
-.font-littlebubble {
-  font-family: 'Little Bubble', cursive;
-}
-
+/* Custom Font Classes */
 .font-hellodaisy {
   font-family: 'Hello Daisy', cursive;
 }
 
-.font-shootingstar {
-  font-family: 'Shooting Star', cursive;
+/* Optional overrides */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #be185d; /* pink-700 */
 }
 
-.font-domesticscript {
-  font-family: 'Domestic Script', cursive;
+a {
+  color: #db2777; /* pink-600 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ec4899; /* pink-500 */
 }
