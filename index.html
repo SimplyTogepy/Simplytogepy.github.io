@@ -6,8 +6,43 @@
   <title>Celeste Greene | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&family=Libre+Baskerville&display=swap');
+    @font-face {
+      font-family: 'Domestic Script';
+      src: url('https://fonts.cdnfonts.com/s/75941/DomesticScript.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Shooting Star';
+      src: url('https://fonts.cdnfonts.com/s/78739/ShootingStarPersonalUse.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Little Bubble';
+      src: url('https://fonts.cdnfonts.com/s/91074/LittleBubble.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Kinkie';
+      src: url('https://fonts.cdnfonts.com/s/102445/Kinkie.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Hello Daisy';
+      src: url('https://fonts.cdnfonts.com/s/97893/HelloDaisy.woff') format('woff');
+    }
     body {
       font-family: 'Georgia', serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+    .headline-accent {
+      font-family: 'Hello Daisy', cursive;
+    }
+    .handwritten {
+      font-family: 'Shooting Star', cursive;
+    }
+    .disclaimer {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
@@ -19,14 +54,16 @@
         <a href="#about" class="hover:text-pink-500">About</a>
         <a href="#portfolio" class="hover:text-pink-500">Projects</a>
         <a href="#beacon" class="hover:text-pink-500">Beacon Award</a>
+        <a href="#disability" class="hover:text-pink-500">Disability Journey</a>
         <a href="#contact" class="hover:text-pink-500">Contact</a>
       </nav>
     </div>
   </header>
 
   <section id="hero" class="py-24 bg-gradient-to-br from-rose-100 to-amber-100 text-center">
-    <h2 class="text-5xl font-bold mb-4 text-pink-700">Hey, I'm Celeste ✨</h2>
-    <p class="text-xl max-w-2xl mx-auto text-gray-700">Alt-chic. Business-forward. A little vintage, a little bold. I’m blending vision, tech, and style to tell my story — and empower others to do the same.</p>
+    <h2 class="text-5xl font-bold mb-4 text-pink-700 headline-accent">Hey, I'm Celeste ✨</h2>
+    <p class="text-xl max-w-2xl mx-auto text-gray-700 handwritten">Alt-chic. Business-forward. A little vintage, a little bold.</p>
+    <p class="text-xl max-w-2xl mx-auto text-gray-700 mt-2">I’m blending vision, tech, and style to tell my story — and empower others to do the same.</p>
   </section>
 
   <section id="about" class="py-20 px-6 max-w-4xl mx-auto bg-white border-t border-b border-pink-200">
@@ -39,6 +76,9 @@
     </p>
     <p class="mt-6 text-lg text-gray-700 leading-relaxed">
       I’ve launched brands, studied systems, and managed teams — always with an eye for what’s beautiful *and* what works. My aesthetic leans soft grunge meets pastel power: think dreamy layouts, efficient flows, and magnetic storytelling.
+    </p>
+    <p class="mt-6 disclaimer">
+      Disclaimer: My natural handwriting is cursive. I understand that not everyone finds cursive easy to read. If this presents a barrier, I may not be the best fit for certain roles or collaborations. I appreciate your understanding.
     </p>
   </section>
 
@@ -60,7 +100,7 @@
 
   <section id="beacon" class="py-20 px-6 max-w-5xl mx-auto bg-white border-t border-b border-pink-200">
     <div class="flex justify-center mb-8">
-      <img src="https://celestegreene.github.io/headshot.jpg" alt="Celeste Greene Beacon Award" class="rounded-xl shadow-lg w-64 object-cover border-4 border-pink-200" />
+      <img src="https://celestegreene.github.io/Headshot.jpg" alt="Celeste Greene Beacon Award" class="rounded-xl shadow-lg w-64 object-cover border-4 border-pink-200" />
     </div>
     <h3 class="text-4xl font-semibold mb-6 text-pink-700">Beacon Award 2020 🌈</h3>
     <p class="text-lg text-gray-700 leading-relaxed">
@@ -90,6 +130,19 @@
     </div>
     <p class="mt-10 text-lg text-gray-700 italic text-center">
       “Color is more than visual — it's emotional. Through it, I created a joyful rebellion against dull days and lifeless hair.”
+    </p>
+  </section>
+
+  <section id="disability" class="py-20 px-6 max-w-4xl mx-auto bg-white border-t border-b border-pink-200">
+    <h3 class="text-4xl font-semibold mb-6 text-pink-700">My Disability Journey 🧠</h3>
+    <p class="text-lg text-gray-700 leading-relaxed">
+      Living with complex, chronic health conditions hasn’t stopped me from pursuing creative and strategic excellence — it's shaped my perspective and deepened my empathy.
+    </p>
+    <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+      From Ehlers-Danlos syndrome and POTS to neurological symptoms connected to a rare gene variant, my experience navigating the medical system has informed my resilience, my accessibility values, and the way I build teams, workflows, and brands.
+    </p>
+    <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+      I’m documenting my experience and supporting medical discovery through my <a href="https://chatgpt.com/g/g-p-68014b13ecd48191a8b1d2aaf119e191-my-medical-imaging/project" class="text-pink-600 underline">Medical Imaging & Diagnostic Journey</a>, a public project aimed at connecting rare patterns and advocating for better clinical understanding.
     </p>
   </section>
 
