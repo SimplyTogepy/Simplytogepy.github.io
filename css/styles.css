@@ -109,3 +109,51 @@ section {
 .hover\:shadow-xl:hover {
   box-shadow: 0 20px 25px rgba(0,0,0,0.1);
 }
+/* Fairy sparkle shimmer */
+@keyframes sparkle {
+  0% {
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  100% {
+    background-position: 200% 0;
+    opacity: 1;
+  }
+}
+
+/* Slide container sparkle background */
+.carousel-glow {
+  position: relative;
+  border: 2px solid #fbcfe8;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff0f5 0%, #fdf6ff 100%);
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.15);
+}
+
+/* Sparkle overlay */
+.carousel-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); /* tiny sparkle texture */
+  background-repeat: repeat;
+  background-size: 150px 150px;
+  pointer-events: none;
+  animation: sparkle 8s linear infinite;
+  opacity: 0.3;
+  z-index: 5;
+}
+
+/* Image style inside carousels */
+.carousel-glow img {
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.carousel-glow img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 192, 203, 0.35);
+}
