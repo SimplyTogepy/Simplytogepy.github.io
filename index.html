@@ -6,26 +6,48 @@
   <title>Celeste Greene | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    @font-face {
+      font-family: 'Wasted Vindey';
+      src: url('./fonts/Wasted-Vindey.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Little Bubble';
+      src: url('./fonts/LittleBubble-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      font-family: 'Wasted Vindey', serif;
+    }
+    .font-littlebubble {
+      font-family: 'Little Bubble', cursive;
+    }
+  </style>
 </head>
 <body class="bg-pink-50 text-gray-900">
 
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <h1 class="text-3xl font-extrabold tracking-wide text-pink-600 font-hellodaisy">Celeste Greene</h1>
+      <h1 class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</h1>
       <nav class="space-x-6 text-md font-medium">
-        <a href="#about" class="hover:text-pink-500">About</a>
-        <a href="#portfolio" class="hover:text-pink-500">Projects</a>
-        <a href="#beacon" class="hover:text-pink-500">Beacon Award</a>
-        <a href="#disability" class="hover:text-pink-500">Disability Journey</a>
-        <a href="#contact" class="hover:text-pink-500">Contact</a>
+        <a href="#about" class="hover:text-pink-500 font-littlebubble">About</a>
+        <a href="#portfolio" class="hover:text-pink-500 font-littlebubble">Projects</a>
+        <a href="#beacon" class="hover:text-pink-500 font-littlebubble">Beacon Award</a>
+        <a href="#modeling" class="hover:text-pink-500 font-littlebubble">Modeling</a>
+        <a href="#disability" class="hover:text-pink-500 font-littlebubble">Disability Journey</a>
+        <a href="#travel" class="hover:text-pink-500 font-littlebubble">Travel & Humanity</a>
+        <a href="#contact" class="hover:text-pink-500 font-littlebubble">Contact</a>
       </nav>
     </div>
   </header>
 
   <section id="hero" class="py-24 bg-gradient-to-br from-rose-100 to-amber-100 text-center">
     <h2 class="text-5xl font-bold mb-4 text-pink-700 font-littlebubble">Hey, I'm Celeste ✨</h2>
-    <p class="text-xl max-w-2xl mx-auto text-gray-700 font-wasted">Alt-chic. Business-forward. A little vintage, a little bold.</p>
-    <p class="text-xl max-w-2xl mx-auto text-gray-700 mt-2 font-wasted">I’m blending vision, tech, and style to tell my story — and empower others to do the same.</p>
+    <p class="text-xl max-w-2xl mx-auto text-gray-700">Alt-chic. Business-forward. A little vintage, a little bold.</p>
+    <p class="text-xl max-w-2xl mx-auto text-gray-700 mt-2">I’m blending vision, tech, and style to tell my story — and empower others to do the same.</p>
   </section>
 
   <section id="about" class="py-20 px-6 max-w-4xl mx-auto bg-white border-t border-b border-pink-200">
@@ -33,14 +55,13 @@
       <img src="./images/Headshot.jpg" alt="Celeste Greene headshot" class="rounded-full shadow-lg w-48 h-48 object-cover border-4 border-pink-200" />
     </div>
     <h3 class="text-4xl font-semibold mb-6 text-pink-700 font-littlebubble">About Me</h3>
-    <p class="text-lg text-gray-700 leading-relaxed font-wasted">
+    <p class="text-lg text-gray-700 leading-relaxed">
       I’m a creative strategist and operational powerhouse with a flair for the unconventional. My story weaves together e-commerce entrepreneurship, deep tech curiosity, and a passion for cultural aesthetics.
     </p>
-    <p class="mt-6 text-lg text-gray-700 leading-relaxed font-wasted">
+    <p class="mt-6 text-lg text-gray-700 leading-relaxed">
       I’ve launched brands, studied systems, and managed teams — always with an eye for what’s beautiful *and* what works. My aesthetic leans soft grunge meets pastel power: think dreamy layouts, efficient flows, and magnetic storytelling.
     </p>
   </section>
-
   <section id="portfolio" class="bg-pink-100 py-20 px-6 max-w-7xl mx-auto">
     <h3 class="text-4xl font-semibold mb-10 text-center text-pink-800 font-littlebubble">Portfolio</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
