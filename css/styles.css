@@ -15,6 +15,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Little Bubble';
+  src: url('../fonts/LittleBubble-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Base Typography */
 body {
   font-family: 'Wasted Vindey', serif;
@@ -23,18 +30,24 @@ body {
   line-height: 1.6;
 }
 
-/* Custom Font Classes */
+/* Font Usage Classes */
 .font-hellodaisy {
   font-family: 'Hello Daisy', cursive;
 }
 
-/* Optional overrides */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  color: #be185d; /* pink-700 */
+.font-littlebubble {
+  font-family: 'Little Bubble', cursive;
 }
 
+/* Header Overrides */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Little Bubble', cursive;
+  font-weight: 700;
+  color: #be185d; /* pink-700 */
+  margin-bottom: 0.5em;
+}
+
+/* Link Styling */
 a {
   color: #db2777; /* pink-600 */
   text-decoration: none;
