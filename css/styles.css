@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Wasted Vindey';
-  src: url('../fonts/Wasted-Vindey.woff2') format('woff2');
+  src: url('https://simplytogepy.github.io/fonts/Wasted-Vindey.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Little Bubble';
-  src: url('../fonts/LittleBubble-Regular.woff') format('woff');
+  src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
