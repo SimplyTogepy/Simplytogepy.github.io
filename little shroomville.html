@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Shroomville | A Whimsical Homestead</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Little Bubble';
+      src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Hello Daisy';
+      src: url('https://simplytogepy.github.io/fonts/HelloDaisy.woff') format('woff');
+    }
+
+    :root {
+      --peach: #fce3c3;
+      --marigold: #ffc375;
+      --orange: #f89d51;
+      --dusty-rose: #dc83a1;
+      --mauve: #b65982;
+    }
+
+    body {
+      font-family: 'Little Bubble', cursive;
+      background-color: var(--peach);
+      background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+      background-repeat: repeat;
+      color: #333;
+      cursor: url('https://cur.cursors-4u.net/nature/nat-11/nat1041.cur'), auto;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Hello Daisy', cursive;
+    }
+
+    .fairy-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <canvas class="fairy-canvas"></canvas>
+  <script>
+    const canvas = document.querySelector('.fairy-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const sparkles = Array.from({ length: 80 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 1.5 + 0.5,
+      speedY: Math.random() * 0.6 + 0.2,
+      alpha: Math.random()
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      sparkles.forEach(s => {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(252, 194, 255, ${s.alpha})`;
+        ctx.fill();
+        s.y += s.speedY;
+        if (s.y > height) {
+          s.y = 0;
+          s.x = Math.random() * width;
+        }
+      });
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  </script>
+
+  <header class="bg-white border-b-4 border-[var(--marigold)] shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-extrabold tracking-wide text-[var(--mauve)]">Little Shroomville</a>
+      <nav class="space-x-6 text-md font-medium">
+        <a href="index.html" class="hover:text-[var(--dusty-rose)]">Home</a>
+        <a href="travel.html" class="hover:text-[var(--dusty-rose)]">Travel</a>
+        <a href="contact.html" class="hover:text-[var(--dusty-rose)]">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h1 class="text-5xl text-[var(--orange)] font-bold mb-4">Welcome to Little Shroomville 🍄</h1>
+    <p class="text-lg text-gray-700 mb-6">
+      A magical 5-acre homestead blooming in the heart of Illinois — Little Shroomville is where sustainability, storytelling, and tiny wonders grow.
+    </p>
+    <p class="text-lg text-gray-700">
+      Here, every duck and daisy has a name. We believe in low-impact farming, organic curiosity, and reconnecting people to the enchantment of the earth. Our dream is to grow into a community hub for gentle agriculture, fairytale gardening, and creative sustainability workshops.
+    </p>
+  </section>
+
+  <section class="py-12 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl text-[var(--mauve)] font-semibold text-center mb-6">Our Little Creatures & Blooming Garden 🌼</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="./images/farm-chicken.jpg" alt="Chicken" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/farm-duck.jpg" alt="Duck" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/farm-barn.jpg" alt="Barn" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/farm-turkey.jpg" alt="Turkey" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/farm-goat.jpg" alt="Goat" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/farm-view.jpg" alt="Farm View" class="rounded shadow-md object-cover w-full h-64">
+    </div>
+  </section>
+
+  <section class="py-20 px-6 max-w-4xl mx-auto text-center bg-[var(--dusty-rose)] bg-opacity-10 rounded-xl my-12">
+    <h3 class="text-2xl text-[var(--mauve)] font-semibold mb-4">Let’s Grow Magic Together ✨</h3>
+    <p class="text-lg text-gray-700 mb-6">Have a question, want to collaborate, or dream of starting your own fairy farm? Reach out below:</p>
+    <form action="mailto:lifeonthefarm217@gmail.com" method="POST" enctype="text/plain" class="space-y-4 max-w-md mx-auto">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-[var(--dusty-rose)] rounded">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-[var(--dusty-rose)] rounded">
+      <textarea name="message" rows="5" placeholder="Your message or questions..." required class="w-full p-3 border border-[var(--dusty-rose)] rounded"></textarea>
+      <button type="submit" class="bg-[var(--mauve)] text-white px-6 py-3 rounded hover:bg-[var(--orange)] transition">Send a Message 🍃</button>
+    </form>
+  </section>
+
+  <footer class="text-center py-6 text-sm text-[var(--dusty-rose)] border-t border-[var(--marigold)]">
+    © 2025 Little Shroomville. Grow gently, love wildly, and believe in the magic. 🍄
+  </footer>
+</body>
+</html>
