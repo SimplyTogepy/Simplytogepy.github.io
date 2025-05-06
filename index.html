@@ -62,14 +62,8 @@
     }
 
     @keyframes sparkle {
-      0% {
-        background-position: 0 0;
-        opacity: 0.5;
-      }
-      100% {
-        background-position: 200% 0;
-        opacity: 1;
-      }
+      0% { background-position: 0 0; opacity: 0.5; }
+      100% { background-position: 200% 0; opacity: 1; }
     }
 
     canvas.sparkle-canvas {
@@ -84,19 +78,51 @@
 <body class="bg-pink-50 text-gray-900">
   <canvas class="sparkle-canvas"></canvas>
 
-   <!-- Floating sparkles background -->
+  <!-- JavaScript sparkle effect -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      for (let i = 0; i < 50; i++) {
-        const sparkle = document.createElement("div");
-        sparkle.className = "sparkle";
-        sparkle.style.top = Math.random() * 100 + "vh";
-        sparkle.style.left = Math.random() * 100 + "vw";
-        sparkle.style.animationDelay = `${Math.random() * 5}s`;
-        document.body.appendChild(sparkle);
+      const canvas = document.querySelector(".sparkle-canvas");
+      const ctx = canvas.getContext("2d");
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+
+      const sparkles = Array.from({ length: 100 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 1.5 + 0.5,
+        speedY: Math.random() * 0.6 + 0.2,
+        alpha: Math.random(),
+      }));
+
+      function drawSparkles() {
+        ctx.clearRect(0, 0, width, height);
+        sparkles.forEach(s => {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 182, 193, ${s.alpha})`;
+          ctx.fill();
+          s.y += s.speedY;
+          if (s.y > height) {
+            s.y = 0;
+            s.x = Math.random() * width;
+          }
+        });
+        requestAnimationFrame(drawSparkles);
       }
+
+      drawSparkles();
+
+      window.addEventListener("resize", () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      });
     });
   </script>
+
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <h1 class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</h1>
@@ -212,48 +238,46 @@
   <p class="mt-4">
     Traveling there wasn’t just a vacation — it was a calling fulfilled. I laughed, I cried, I learned. And somewhere between the sunsets and the street food, I realized: I’m not just a wanderer, I’m a thinker, a dreamer, a problem solver. I’m really, *really* smart — and the world is mine to explore.
   </p>
-</div>
 <div class="carousel-glow mb-10">
-  <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-4">
-    <!-- Replace with actual image paths -->
-    <img src="./images/IMG_1809.jpg" alt="Thailand-1" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1814.jpg" alt="Thailand-2" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1831.jpg" alt="Thailand-3" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1843.jpg" alt="Thailand-4" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1845.jpg" alt="Thailand-5" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1853.jpg" alt="Thailand-6" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1859.jpg" alt="Thailand-7" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1866.jpg" alt="Thailand-8" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1905.jpg" alt="Thailand-9" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_1989.jpg" alt="Thailand-10" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2048.jpg" alt="Thailand-11" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2137.jpg" alt="Thailand-12" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2159.jpg" alt="Thailand-13" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2213.jpg" alt="Thailand-14" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2218.jpg" alt="Thailand-15" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2232.jpg" alt="Thailand-16" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2234.jpg" alt="Thailand-17" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2244.jpg" alt="Thailand-18" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2286.jpg" alt="Thailand-19" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2287.jpg" alt="Thailand-20" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2288.jpg" alt="Thailand-21" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2302.jpg" alt="Thailand-22" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2304.jpg" alt="Thailand-23" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2305.jpg" alt="Thailand-24" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2310.jpg" alt="Thailand-25" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
-    <img src="./images/IMG_2315.jpg" alt="Thailand-26" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+    <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory p-4">
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-1.jpg" alt="Thailand 1" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-2.jpg" alt="Thailand 2" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-3.jpg" alt="Thailand 3" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-4.jpg" alt="Thailand 4" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-5.jpg" alt="Thailand 5" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-6.jpg" alt="Thailand 6" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-7.jpg" alt="Thailand 7" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-8.jpg" alt="Thailand 8" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-9.jpg" alt="Thailand 9" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-10.jpg" alt="Thailand 10" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-11.jpg" alt="Thailand 11" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-12.jpg" alt="Thailand 12" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-13.jpg" alt="Thailand 13" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-14.jpg" alt="Thailand 14" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-15.jpg" alt="Thailand 15" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-16.jpg" alt="Thailand 16" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-17.jpg" alt="Thailand 17" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-18.jpg" alt="Thailand 18" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-19.jpg" alt="Thailand 19" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-20.jpg" alt="Thailand 20" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-21.jpg" alt="Thailand 21" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-22.jpg" alt="Thailand 22" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-23.jpg" alt="Thailand 23" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-24.jpg" alt="Thailand 24" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-25.jpg" alt="Thailand 25" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+      <img src="https://simplytogepy.github.io/images/thailand/Thailand-26.jpg" alt="Thailand 26" class="snap-center w-full sm:w-96 h-64 object-cover rounded-lg" />
+    </div>
   </div>
-</div>
 
 <!-- 🎥 Embedded Thailand Trip Video -->
-<div class="mt-10">
-  <video controls class="w-full max-w-4xl mx-auto rounded-lg shadow-xl border border-pink-200">
-    <source src="./thailand_trip_video.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <p class="text-sm text-center text-gray-600 mt-2 font-littlebubble">A magical peek into my Thailand journey 🌸</p>
-</div>
-
+ <div class="mt-10">
+    <video controls class="w-full max-w-4xl mx-auto rounded-lg shadow-xl border border-pink-200">
+      <source src="https://simplytogepy.github.io/images/thailand/thailand_trip_video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <p class="text-sm text-center text-gray-600 mt-2 font-littlebubble">A magical peek into my Thailand journey 🌸</p>
+  </div>
+</section>
   <!-- 🕌 Istanbul Section -->
 <div class="mb-16" id="istanbul">
   <h3 class="text-3xl font-littlebubble text-pink-600 mb-4">Istanbul: Dreams in Stone and Sky</h3>
