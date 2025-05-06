@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Celeste Greene</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    @font-face {
+      font-family: 'Little Bubble';
+      src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
+    }
+    body {
+      font-family: 'Little Bubble', cursive;
+      background-color: #fff7f9;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
+      <nav class="space-x-6 text-md font-medium">
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="text-pink-600 underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="py-24 px-6 max-w-4xl mx-auto text-center">
+    <h1 class="text-5xl font-littlebubble text-pink-700 mb-6">Let’s Connect 💌</h1>
+    <p class="text-lg text-gray-700 mb-8">
+      I love collaborating on meaningful projects, connecting with fellow creatives, and supporting inclusive initiatives. Whether it's a business pitch, a speaking invite, or a warm hello — I’d love to hear from you!
+    </p>
+    <form name="contact-form" method="POST" data-netlify="true" class="bg-white p-8 rounded-xl shadow-lg border border-pink-200 text-left">
+      <input type="hidden" name="form-name" value="contact-form">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Your Name" required class="p-3 border border-pink-300 rounded-lg w-full">
+        <input type="email" name="email" placeholder="Your Email" required class="p-3 border border-pink-300 rounded-lg w-full">
+      </div>
+      <textarea name="message" rows="5" placeholder="Your Message" required class="mt-6 p-3 border border-pink-300 rounded-lg w-full"></textarea>
+      <button type="submit" class="mt-6 bg-pink-600 text-white px-6 py-3 rounded-full font-littlebubble hover:bg-pink-700 transition">Send Message ✨</button>
+    </form>
+  </section>
+
+  <section class="py-10 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl font-littlebubble text-pink-700 mb-4">Direct Inquiries</h2>
+    <div class="space-y-3 text-pink-700">
+      <p>💼 Consulting & Business: <a href="mailto:CelesteWGreene@outlook.com" class="text-pink-600 underline">CelesteWGreene@outlook.com</a></p>
+      <p>🎤 Disability Advocacy & Speaking: <a href="mailto:simplytogepy@gmail.com" class="text-pink-600 underline">simplytogepy@gmail.com</a></p>
+      <p>🎨 Cosmetology & Creative Work: <a href="mailto:Hotmesscolor@gmail.com" class="text-pink-600 underline">Hotmesscolor@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-sm text-pink-500 border-t border-pink-200">
+    © 2025 Celeste Greene. Say hi — you never know what magic will come of it.
+  </footer>
+</body>
+</html>
