@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel | Celeste Greene</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    @font-face {
+      font-family: 'Little Bubble';
+      src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
+    }
+    body {
+      font-family: 'Little Bubble', cursive;
+      background-color: #fff7f9;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
+      <nav class="space-x-6 text-md font-medium">
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="travel.html" class="text-pink-600 underline">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="py-24 px-6 max-w-4xl mx-auto text-center">
+    <h1 class="text-5xl font-littlebubble text-pink-700 mb-4">Travel & Humanity 🌏</h1>
+    <p class="text-lg text-gray-700 mb-8">
+      From golden temples in Thailand to the winding bazaars of Istanbul, travel has shaped how I connect, learn, and dream. It’s more than a passport stamp — it’s a path to perspective, purpose, and unexpected joy.
+    </p>
+    <p class="text-lg text-gray-700">
+      I’m passionate about culture, community, and curiosity. My travels inspire not only my business and design work, but also how I show up in the world — with empathy, enthusiasm, and the urge to create.
+    </p>
+  </section>
+
+  <section class="py-10 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-littlebubble text-pink-700 mb-6 text-center">Global Moments 📸</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Add travel photos here -->
+      <img src="./images/thailand-1.jpg" alt="Thailand 1" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/thailand-2.jpg" alt="Thailand 2" class="rounded shadow-md object-cover w-full h-64">
+      <img src="./images/istanbul-1.jpg" alt="Istanbul 1" class="rounded shadow-md object-cover w-full h-64">
+      <!-- Add more as needed -->
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-pink-50 max-w-4xl mx-auto text-center mt-20 rounded-xl">
+    <h3 class="text-2xl text-pink-700 font-littlebubble mb-4">Where to Next?</h3>
+    <p class="text-lg text-gray-700 mb-4">
+      I dream of living abroad — where culture, calm, and creativity meet. Japan, Thailand, and anywhere filled with ancient history feel like home in my soul.
+    </p>
+    <form name="recommend-destination" method="POST" data-netlify="true" class="mt-6">
+      <input type="hidden" name="form-name" value="recommend-destination">
+      <input type="text" name="name" placeholder="Your Name" class="p-3 border border-pink-300 rounded-lg w-full max-w-md mx-auto block mb-4" required>
+      <input type="email" name="email" placeholder="Your Email" class="p-3 border border-pink-300 rounded-lg w-full max-w-md mx-auto block mb-4" required>
+      <textarea name="suggestion" rows="4" placeholder="Suggest a place and tell me why!" class="p-3 border border-pink-300 rounded-lg w-full max-w-md mx-auto block mb-4" required></textarea>
+      <button type="submit" class="bg-pink-600 text-white px-6 py-3 rounded-full font-littlebubble hover:bg-pink-700 transition">Send Your Suggestion ✈️</button>
+    </form>
+  </section>
+
+  <footer class="text-center py-6 text-sm text-pink-500 border-t border-pink-200">
+    © 2025 Celeste Greene. Wander often, wonder always.
+  </footer>
+</body>
+</html>
