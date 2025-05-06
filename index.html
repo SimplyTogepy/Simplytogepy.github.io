@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celeste Greene | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./css/styles.css" />
 <style>
   @font-face {
     font-family: 'Wasted Vindey';
@@ -21,6 +13,13 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Hello Daisy';
+    src: url('https://simplytogepy.github.io/fonts/HelloDaisy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body {
     font-family: 'Wasted Vindey', serif;
     background-color: #fff7f9;
@@ -30,6 +29,10 @@
 
   .font-littlebubble {
     font-family: 'Little Bubble', cursive;
+  }
+
+  .font-hellodaisy {
+    font-family: 'Hello Daisy', cursive;
   }
 
   .carousel-glow {
@@ -79,10 +82,6 @@
     z-index: 999;
   }
 </style>
-</head>
-<body class="bg-pink-50 text-gray-900">
-  <canvas class="sparkle-canvas"></canvas>
-
   <!-- JavaScript sparkle effect -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
