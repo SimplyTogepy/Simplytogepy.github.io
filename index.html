@@ -6,74 +6,79 @@
   <title>Celeste Greene | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css" />
-  <style>
-    @font-face {
-      font-family: 'Wasted Vindey';
-      src: url('./fonts/Wasted-Vindey.woff2') format('woff2');
-    }
-    @font-face {
-      font-family: 'Little Bubble';
-      src: url('./fonts/LittleBubble-Regular.woff') format('woff');
-    }
+<style>
+  @font-face {
+    font-family: 'Wasted Vindey';
+    src: url('https://simplytogepy.github.io/fonts/Wasted-Vindey.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    body {
-      font-family: 'Wasted Vindey', serif;
-      background-color: #fff7f9;
-      color: #333;
-      position: relative;
-    }
+  @font-face {
+    font-family: 'Little Bubble';
+    src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-    .font-littlebubble {
-      font-family: 'Little Bubble', cursive;
-    }
+  body {
+    font-family: 'Wasted Vindey', serif;
+    background-color: #fff7f9;
+    color: #333;
+    position: relative;
+  }
 
-    .carousel-glow {
-      position: relative;
-      border: 2px solid #fbcfe8;
-      border-radius: 1rem;
-      overflow: hidden;
-      background: linear-gradient(135deg, #fff0f5 0%, #fdf6ff 100%);
-      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.15);
-    }
+  .font-littlebubble {
+    font-family: 'Little Bubble', cursive;
+  }
 
-    .carousel-glow::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-      background-repeat: repeat;
-      background-size: 150px 150px;
-      pointer-events: none;
-      animation: sparkle 8s linear infinite;
-      opacity: 0.3;
-      z-index: 5;
-    }
+  .carousel-glow {
+    position: relative;
+    border: 2px solid #fbcfe8;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff0f5 0%, #fdf6ff 100%);
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.15);
+  }
 
-    .carousel-glow img {
-      border-radius: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      z-index: 10;
-      position: relative;
-    }
+  .carousel-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    background-repeat: repeat;
+    background-size: 150px 150px;
+    pointer-events: none;
+    animation: sparkle 8s linear infinite;
+    opacity: 0.3;
+    z-index: 5;
+  }
 
-    .carousel-glow img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 25px rgba(255, 192, 203, 0.35);
-    }
+  .carousel-glow img {
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+    position: relative;
+  }
 
-    @keyframes sparkle {
-      0% { background-position: 0 0; opacity: 0.5; }
-      100% { background-position: 200% 0; opacity: 1; }
-    }
+  .carousel-glow img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 192, 203, 0.35);
+  }
 
-    canvas.sparkle-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 999;
-    }
-  </style>
+  @keyframes sparkle {
+    0% { background-position: 0 0; opacity: 0.5; }
+    100% { background-position: 200% 0; opacity: 1; }
+  }
+
+  canvas.sparkle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+  }
+</style>
 </head>
 <body class="bg-pink-50 text-gray-900">
   <canvas class="sparkle-canvas"></canvas>
