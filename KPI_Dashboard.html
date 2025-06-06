@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ...existing code... -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KPI Dashboard | Celeste Greene</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
   <style>
-    /* ...existing code... */
+    body {
+      font-family: Georgia, serif;
+      background-color: #fff7f9;
+      color: #333;
+    }
     .toggle-btn {
       display: block;
       margin: 0 auto 1.5rem auto;
@@ -22,26 +30,42 @@
   </style>
 </head>
 <body>
-  <header>
-    <!-- ...existing code... -->
+  <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
+      <nav class="space-x-6 text-md font-medium">
+        <a href="index.html" class="hover:text-pink-500">Home</a>
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
+        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
+        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <button class="toggle-btn" onclick="toggleKPIs()">Show/Hide Executive KPIs</button>
-
-  <section id="executive-kpis">
-    <!-- ...existing code for Executive KPIs... -->
+  <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+    <h1 class="text-5xl font-littlebubble text-pink-700 mb-6">KPI Dashboard 📊</h1>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+      A simple interactive dashboard for visualizing key performance metrics.
+    </p>
+    <button class="toggle-btn" onclick="toggleKPIs()">Show/Hide Executive KPIs</button>
+    <section id="executive-kpis" class="mt-6">
+      <p class="text-gray-600">[KPI charts would go here]</p>
+    </section>
   </section>
 
-  <!-- ...existing code for other sections... -->
+  <footer class="text-center py-6 text-sm text-pink-500 border-t border-pink-200">
+    © 2025 Celeste Greene.
+  </footer>
 
   <script>
     function toggleKPIs() {
       const kpiSection = document.getElementById('executive-kpis');
-      if (kpiSection.style.display === 'none') {
-        kpiSection.style.display = '';
-      } else {
-        kpiSection.style.display = 'none';
-      }
+      kpiSection.style.display = kpiSection.style.display === 'none' ? '' : 'none';
     }
   </script>
 </body>
