@@ -54,7 +54,21 @@
     </p>
     <button class="toggle-btn" onclick="toggleKPIs()">Show/Hide Executive KPIs</button>
     <section id="executive-kpis" class="mt-6">
-      <p class="text-gray-600">[KPI charts would go here]</p>
+      <h2 class="text-2xl font-semibold mb-4">
+        Overall Performance
+        <span class="block text-sm text-gray-500">3/9/2025 - 6/6/2025</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Impressions</h3>
+          <p class="text-3xl font-bold text-pink-600">11,004</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Members Reached</h3>
+          <p class="text-3xl font-bold text-pink-600">4,797</p>
+        </div>
+      </div>
+      <canvas id="kpiChart" class="mt-10"></canvas>
     </section>
   </section>
 
@@ -62,11 +76,40 @@
     © 2025 Celeste Greene.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     function toggleKPIs() {
       const kpiSection = document.getElementById('executive-kpis');
       kpiSection.style.display = kpiSection.style.display === 'none' ? '' : 'none';
     }
+
+    const ctx = document.getElementById('kpiChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Impressions', 'Members Reached'],
+        datasets: [{
+          label: 'Overall Performance',
+          data: [11004, 4797],
+          backgroundColor: [
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ],
+          borderColor: [
+            'rgba(236, 72, 153, 1)',
+            'rgba(251, 207, 232, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
   </script>
 </body>
 </html>
