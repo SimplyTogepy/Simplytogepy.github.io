@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KPI Dashboard | Celeste Greene</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./css/styles.css">
   <style>
     body {
@@ -34,21 +35,66 @@
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
       <nav class="space-x-6 text-md font-medium">
-  <a href="index.html" class="hover:text-pink-500">Home</a>
-  <a href="about.html" class="hover:text-pink-500">About</a>
-  <div class="relative inline-block group">
-    <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
-    <div class="hidden group-hover:block absolute bg-white border border-pink-200 mt-2 rounded-md py-2">
-      <a href="beacon cosmetology.html" class="block px-4 py-2 hover:bg-pink-100">Beacon</a>
-      <a href="little-shroomville.html" class="block px-4 py-2 hover:bg-pink-100 whitespace-nowrap">Little Shroomville</a>
-      <a href="modeling.html" class="block px-4 py-2 hover:bg-pink-100">Modeling</a>
-    </div>
-  </div>
-  <a href="resume.html" class="hover:text-pink-500">Resume</a>
-  <a href="travel.html" class="hover:text-pink-500">Travel</a>
-  <a href="contact.html" class="hover:text-pink-500">Contact</a>
-</nav>
         <a href="index.html" class="hover:text-pink-500">Home</a>
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <div class="relative inline-block group">
+          <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+          <div class="hidden group-hover:block absolute bg-white border border-pink-200 mt-2 rounded-md py-2">
+            <a href="beacon cosmetology.html" class="block px-4 py-2 hover:bg-pink-100">Beacon</a>
+            <a href="little-shroomville.html" class="block px-4 py-2 hover:bg-pink-100 whitespace-nowrap">Little Shroomville</a>
+            <a href="modeling.html" class="block px-4 py-2 hover:bg-pink-100">Modeling</a>
+          </div>
+        </div>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <canvas id="revenueChart"></canvas>
+        <canvas id="customerChart"></canvas>
+      </div>
+    const months = ["Jan","Feb","Mar","Apr","May","Jun"];
+    const revenueData = [12000,15000,18000,13000,17000,19000];
+    const customerData = [300,400,350,500,450,550];
+
+    const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+    new Chart(revenueCtx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Revenue',
+          data: revenueData,
+          borderColor: '#b85c38',
+          backgroundColor: 'rgba(184,92,56,0.2)',
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    const customerCtx = document.getElementById('customerChart').getContext('2d');
+    new Chart(customerCtx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'New Customers',
+          data: customerData,
+          backgroundColor: '#b85c38'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
         <a href="about.html" class="hover:text-pink-500">About</a>
         <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
         <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
