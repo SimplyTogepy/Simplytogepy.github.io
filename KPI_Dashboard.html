@@ -6,6 +6,7 @@
   <title>KPI Dashboard | Celeste Greene</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <style>
     body {
       font-family: Georgia, serif;
@@ -33,6 +34,20 @@
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
+      <nav>
+        <ul class="flex space-x-6 text-md font-medium">
+          <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+          <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+          <li><a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a></li>
+          <li><a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a></li>
+          <li><a href="portfolio.html" class="hover:text-pink-500">Portfolio</a></li>
+          <li><a href="modeling.html" class="hover:text-pink-500">Modeling</a></li>
+          <li><a href="resume.html" class="hover:text-pink-500">Resume</a></li>
+          <li><a href="KPI_Dashboard.html" class="hover:text-pink-500">KPI Dashboard</a></li>
+          <li><a href="travel.html" class="hover:text-pink-500">Travel</a></li>
+          <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+        </ul>
+
       <nav class="space-x-6 text-md font-medium">
   <a href="index.html" class="hover:text-pink-500">Home</a>
   <a href="about.html" class="hover:text-pink-500">About</a>
@@ -196,6 +211,26 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <section id="social-maps" class="mt-16">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Follower Locations</h2>
+      <p class="text-center text-sm mb-6">
+        Data sources:
+        <a href="https://www.facebook.com/Simplytogepy" class="text-pink-600 hover:underline">Facebook</a>
+        &amp;
+        <a href="https://www.instagram.com/simplytogepy/" class="text-pink-600 hover:underline">Instagram</a>
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Facebook</h3>
+          <div id="facebook-map" class="h-96 rounded-lg shadow"></div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Instagram</h3>
+          <div id="instagram-map" class="h-96 rounded-lg shadow"></div>
+        </div>
+      </div>
 
     </section>
   </section>
@@ -205,6 +240,8 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
   <script>
     function toggleKPIs() {
       const kpiSection = document.getElementById('executive-kpis');
@@ -354,9 +391,14 @@
       }
     });
 
+      const companyCtx = document.getElementById('companyChart').getContext('2d');
+      new Chart(companyCtx, {
+        type: 'pie',
+
     const companyCtx = document.getElementById('companyChart').getContext('2d');
     new Chart(companyCtx, {
       type: 'pie',
+
       data: {
         labels: ['Rural King', 'Coding Temple', 'Amazon', 'Upwork', 'TrueCoders'],
         datasets: [{
@@ -375,7 +417,55 @@
           legend: { position: 'bottom' }
         }
       }
+
+      });
+
+      const fbCities = [
+        { name: 'Davao City, Philippines', lat: 7.1907, lng: 125.4553, pct: 1.7 },
+        { name: 'Lagos, Nigeria', lat: 6.5244, lng: 3.3792, pct: 1.7 },
+        { name: 'Accra, Ghana', lat: 5.6037, lng: -0.187, pct: 1.3 },
+        { name: 'Zamboanga City, Philippines', lat: 6.9214, lng: 122.079, pct: 1.2 },
+        { name: 'Cebu City, Philippines', lat: 10.3157, lng: 123.8854, pct: 1.0 },
+        { name: 'Quezon City, Philippines', lat: 14.676, lng: 121.0437, pct: 0.9 },
+        { name: 'Cagayan de Oro, Philippines', lat: 8.4542, lng: 124.6319, pct: 0.7 },
+        { name: 'Iloilo City, Philippines', lat: 10.7202, lng: 122.5621, pct: 0.7 },
+        { name: 'Bacolod City, Philippines', lat: 10.6765, lng: 122.9511, pct: 0.6 },
+        { name: 'General Santos City, Philippines', lat: 6.1164, lng: 125.1717, pct: 0.6 }
+      ];
+
+      const igCities = [
+        { name: 'San Antonio, TX', lat: 29.4241, lng: -98.4936, pct: 1.6 },
+        { name: 'Houston, TX', lat: 29.7604, lng: -95.3698, pct: 1.1 },
+        { name: 'Narayanganj, Bangladesh', lat: 23.6238, lng: 90.5, pct: 0.8 },
+        { name: 'Tucson, AZ', lat: 32.2226, lng: -110.9747, pct: 0.8 },
+        { name: 'Albuquerque, NM', lat: 35.0844, lng: -106.6504, pct: 0.6 },
+        { name: 'Anchorage, AK', lat: 61.2181, lng: -149.9003, pct: 0.5 },
+        { name: 'Kansas City, KS', lat: 39.1141, lng: -94.6275, pct: 0.5 },
+        { name: 'Lima, Peru', lat: -12.0464, lng: -77.0428, pct: 0.5 },
+        { name: 'Mattoon, IL', lat: 39.4831, lng: -88.3728, pct: 0.5 },
+        { name: 'Pahrump, NV', lat: 36.2083, lng: -115.9839, pct: 0.5 }
+      ];
+
+      function initCityMap(elementId, data, color) {
+        const map = L.map(elementId).setView([20,0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        data.forEach(city => {
+          L.circleMarker([city.lat, city.lng], {
+            radius: 4 + city.pct,
+            color: color,
+            fillColor: color,
+            fillOpacity: 0.7
+          }).addTo(map).bindPopup(`${city.name}: ${city.pct}%`);
+        });
+      }
+
+      initCityMap('facebook-map', fbCities, '#ec4899');
+      initCityMap('instagram-map', igCities, '#7c3aed');
+
     });
+
 
   </script>
 </body>
