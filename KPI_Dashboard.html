@@ -6,6 +6,7 @@
   <title>KPI Dashboard | Celeste Greene</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <style>
     body {
       font-family: Georgia, serif;
@@ -33,16 +34,19 @@
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
-      <nav class="space-x-6 text-md font-medium">
-        <a href="index.html" class="hover:text-pink-500">Home</a>
-        <a href="about.html" class="hover:text-pink-500">About</a>
-        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
-        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
-        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
-        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
-        <a href="resume.html" class="hover:text-pink-500">Resume</a>
-        <a href="travel.html" class="hover:text-pink-500">Travel</a>
-        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      <nav>
+        <ul class="flex space-x-6 text-md font-medium">
+          <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+          <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+          <li><a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a></li>
+          <li><a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a></li>
+          <li><a href="portfolio.html" class="hover:text-pink-500">Portfolio</a></li>
+          <li><a href="modeling.html" class="hover:text-pink-500">Modeling</a></li>
+          <li><a href="resume.html" class="hover:text-pink-500">Resume</a></li>
+          <li><a href="KPI_Dashboard.html" class="hover:text-pink-500">KPI Dashboard</a></li>
+          <li><a href="travel.html" class="hover:text-pink-500">Travel</a></li>
+          <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -54,7 +58,144 @@
     </p>
     <button class="toggle-btn" onclick="toggleKPIs()">Show/Hide Executive KPIs</button>
     <section id="executive-kpis" class="mt-6">
-      <p class="text-gray-600">[KPI charts would go here]</p>
+      <h2 class="text-2xl font-semibold mb-4">
+        Overall Performance
+        <span class="block text-sm text-gray-500">3/9/2025 - 6/6/2025</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Impressions</h3>
+          <p class="text-3xl font-bold text-pink-600">11,004</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Members Reached</h3>
+          <p class="text-3xl font-bold text-pink-600">4,797</p>
+        </div>
+      </div>
+      <canvas id="kpiChart" class="mt-10"></canvas>
+    </section>
+
+      <section id="demographics" class="mt-16">
+        <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Job Title</h3>
+          <canvas id="jobTitleChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Location</h3>
+          <canvas id="locationChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Industry</h3>
+          <canvas id="industryChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Seniority</h3>
+          <canvas id="seniorityChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Company Size</h3>
+          <canvas id="companySizeChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Company</h3>
+          <canvas id="companyChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="post-performance" class="mt-16 text-left">
+      <h2 class="text-2xl font-semibold mb-8 text-center">Recent Post Performance</h2>
+      <div class="space-y-8">
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326839399520894976" class="text-pink-600 hover:underline">Post on May 14, 2025 at 9:00 PM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 2,162</p>
+          <p><strong>Members Reached:</strong> 1,574</p>
+          <p><strong>Reactions:</strong> 38</p>
+          <p><strong>Comments:</strong> 4</p>
+          <p><strong>Reposts:</strong> 1</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Retail Consultant</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Design Specialist</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7328937325730713601" class="text-pink-600 hover:underline">Post on May 16, 2025 at 12:20 AM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 975</p>
+          <p><strong>Members Reached:</strong> 684</p>
+          <p><strong>Reactions:</strong> 15</p>
+          <p><strong>Comments:</strong> 7</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 16, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Account Manager</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Higher Education</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 16, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Dental Assisting Instructor</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326841046334615552" class="text-pink-600 hover:underline">Post on May 14, 2025 at 5:30 PM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 663</p>
+          <p><strong>Members Reached:</strong> 458</p>
+          <p><strong>Reactions:</strong> 11</p>
+          <p><strong>Comments:</strong> 10</p>
+          <p><strong>Reposts:</strong> 1</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Technology Technician</li>
+            <li>Top location: Greater Melbourne Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Research Assistant</li>
+            <li>Top location: Greater Melbourne Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="social-maps" class="mt-16">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Follower Locations</h2>
+      <p class="text-center text-sm mb-6">
+        Data sources:
+        <a href="https://www.facebook.com/Simplytogepy" class="text-pink-600 hover:underline">Facebook</a>
+        &amp;
+        <a href="https://www.instagram.com/simplytogepy/" class="text-pink-600 hover:underline">Instagram</a>
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Facebook</h3>
+          <div id="facebook-map" class="h-96 rounded-lg shadow"></div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Instagram</h3>
+          <div id="instagram-map" class="h-96 rounded-lg shadow"></div>
+        </div>
+      </div>
     </section>
   </section>
 
@@ -62,11 +203,223 @@
     © 2025 Celeste Greene.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script>
     function toggleKPIs() {
       const kpiSection = document.getElementById('executive-kpis');
       kpiSection.style.display = kpiSection.style.display === 'none' ? '' : 'none';
     }
+
+    const ctx = document.getElementById('kpiChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Impressions', 'Members Reached'],
+        datasets: [{
+          label: 'Overall Performance',
+          data: [11004, 4797],
+          backgroundColor: [
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ],
+          borderColor: [
+            'rgba(236, 72, 153, 1)',
+            'rgba(251, 207, 232, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const jobTitleCtx = document.getElementById('jobTitleChart').getContext('2d');
+    new Chart(jobTitleCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Software Engineer', 'Full Stack Engineer', 'Founder', 'Owner', 'Frontend Developer'],
+        datasets: [{
+          data: [5.6, 4.4, 2.2, 2.2, 1.9],
+          backgroundColor: [
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(251, 207, 232, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(253, 186, 116, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const locationCtx = document.getElementById('locationChart').getContext('2d');
+    new Chart(locationCtx, {
+      type: 'pie',
+      data: {
+        labels: ['NYC Metro', 'Greater Houston', 'DFW Metroplex', 'Denver Metro', 'SF Bay Area'],
+        datasets: [{
+          data: [3.3, 3, 3, 3, 2.6],
+          backgroundColor: [
+            'rgba(251, 207, 232, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const industryCtx = document.getElementById('industryChart').getContext('2d');
+    new Chart(industryCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Software Development', 'IT Services', 'Tech/Internet', 'Staffing & Recruiting', 'Design Services'],
+        datasets: [{
+          data: [27, 14.1, 5.9, 5.2, 3.7],
+          backgroundColor: [
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const seniorityCtx = document.getElementById('seniorityChart').getContext('2d');
+    new Chart(seniorityCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Entry', 'Senior', 'Director', 'Manager', 'Owner'],
+        datasets: [{
+          data: [39.6, 23, 4.4, 3.7, 3.7],
+          backgroundColor: [
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const companySizeCtx = document.getElementById('companySizeChart').getContext('2d');
+    new Chart(companySizeCtx, {
+      type: 'pie',
+      data: {
+        labels: ['10,001+ employees', '11-50', '1-10', '51-200', '501-1000'],
+        datasets: [{
+          data: [18.9, 14.8, 9.6, 9.6, 5.2],
+          backgroundColor: [
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(251, 207, 232, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+      const companyCtx = document.getElementById('companyChart').getContext('2d');
+      new Chart(companyCtx, {
+        type: 'pie',
+      data: {
+        labels: ['Rural King', 'Coding Temple', 'Amazon', 'Upwork', 'TrueCoders'],
+        datasets: [{
+          data: [2.6, 1.5, 1.5, 1.1, 1.1],
+          backgroundColor: [
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+      });
+
+      const fbCities = [
+        { name: 'Davao City, Philippines', lat: 7.1907, lng: 125.4553, pct: 1.7 },
+        { name: 'Lagos, Nigeria', lat: 6.5244, lng: 3.3792, pct: 1.7 },
+        { name: 'Accra, Ghana', lat: 5.6037, lng: -0.187, pct: 1.3 },
+        { name: 'Zamboanga City, Philippines', lat: 6.9214, lng: 122.079, pct: 1.2 },
+        { name: 'Cebu City, Philippines', lat: 10.3157, lng: 123.8854, pct: 1.0 },
+        { name: 'Quezon City, Philippines', lat: 14.676, lng: 121.0437, pct: 0.9 },
+        { name: 'Cagayan de Oro, Philippines', lat: 8.4542, lng: 124.6319, pct: 0.7 },
+        { name: 'Iloilo City, Philippines', lat: 10.7202, lng: 122.5621, pct: 0.7 },
+        { name: 'Bacolod City, Philippines', lat: 10.6765, lng: 122.9511, pct: 0.6 },
+        { name: 'General Santos City, Philippines', lat: 6.1164, lng: 125.1717, pct: 0.6 }
+      ];
+
+      const igCities = [
+        { name: 'San Antonio, TX', lat: 29.4241, lng: -98.4936, pct: 1.6 },
+        { name: 'Houston, TX', lat: 29.7604, lng: -95.3698, pct: 1.1 },
+        { name: 'Narayanganj, Bangladesh', lat: 23.6238, lng: 90.5, pct: 0.8 },
+        { name: 'Tucson, AZ', lat: 32.2226, lng: -110.9747, pct: 0.8 },
+        { name: 'Albuquerque, NM', lat: 35.0844, lng: -106.6504, pct: 0.6 },
+        { name: 'Anchorage, AK', lat: 61.2181, lng: -149.9003, pct: 0.5 },
+        { name: 'Kansas City, KS', lat: 39.1141, lng: -94.6275, pct: 0.5 },
+        { name: 'Lima, Peru', lat: -12.0464, lng: -77.0428, pct: 0.5 },
+        { name: 'Mattoon, IL', lat: 39.4831, lng: -88.3728, pct: 0.5 },
+        { name: 'Pahrump, NV', lat: 36.2083, lng: -115.9839, pct: 0.5 }
+      ];
+
+      function initCityMap(elementId, data, color) {
+        const map = L.map(elementId).setView([20,0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        data.forEach(city => {
+          L.circleMarker([city.lat, city.lng], {
+            radius: 4 + city.pct,
+            color: color,
+            fillColor: color,
+            fillOpacity: 0.7
+          }).addTo(map).bindPopup(`${city.name}: ${city.pct}%`);
+        });
+      }
+
+      initCityMap('facebook-map', fbCities, '#ec4899');
+      initCityMap('instagram-map', igCities, '#7c3aed');
   </script>
 </body>
 </html>
