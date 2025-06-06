@@ -1,28 +1,13 @@
-@font-face {
-  font-family: 'Wasted Vindey';
-  src: url('https://simplytogepy.github.io/fonts/Wasted-Vindey.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Little Bubble';
-  src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  font-family: 'Wasted Vindey', serif;
+  font-family: Georgia, serif;
   background-color: #fff7f9;
   color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
-
 h1, h2, h3, h4, h5, h6, nav a, .font-littlebubble {
-  font-family: 'Little Bubble', cursive;
+  font-family: Georgia, serif;
 }
 
 nav a {

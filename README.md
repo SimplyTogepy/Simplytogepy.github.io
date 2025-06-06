@@ -14,4 +14,4 @@ I'm a strategic thinker, entrepreneur, and lifelong learner with a background in
 🛡️ **License**  
 - Code: MIT License  
 - Content (bio, logos, branding): All Rights Reserved  
-See `LICENSE.txt` for details.
+See `LICENSE` for details.
