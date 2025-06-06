@@ -55,6 +55,7 @@
         <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
         <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
         <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="KPI_Dashboard.html" class="hover:text-pink-500">KPI Dashboard</a>
         <a href="travel.html" class="hover:text-pink-500">Travel</a>
         <a href="contact.html" class="hover:text-pink-500">Contact</a>
       </nav>
@@ -83,6 +84,37 @@
         </div>
       </div>
       <canvas id="kpiChart" class="mt-10"></canvas>
+
+    </section>
+
+    <section id="demographics" class="mt-16">
+      <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Job Title</h3>
+          <canvas id="jobTitleChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Location</h3>
+          <canvas id="locationChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Industry</h3>
+          <canvas id="industryChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Seniority</h3>
+          <canvas id="seniorityChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Company Size</h3>
+          <canvas id="companySizeChart"></canvas>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Company</h3>
+          <canvas id="companyChart"></canvas>
+        </div>
+      </div>
     </section>
   </section>
 
@@ -124,6 +156,146 @@
         }
       }
     });
+
+
+    const jobTitleCtx = document.getElementById('jobTitleChart').getContext('2d');
+    new Chart(jobTitleCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Software Engineer', 'Full Stack Engineer', 'Founder', 'Owner', 'Frontend Developer'],
+        datasets: [{
+          data: [5.6, 4.4, 2.2, 2.2, 1.9],
+          backgroundColor: [
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(251, 207, 232, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(253, 186, 116, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const locationCtx = document.getElementById('locationChart').getContext('2d');
+    new Chart(locationCtx, {
+      type: 'pie',
+      data: {
+        labels: ['NYC Metro', 'Greater Houston', 'DFW Metroplex', 'Denver Metro', 'SF Bay Area'],
+        datasets: [{
+          data: [3.3, 3, 3, 3, 2.6],
+          backgroundColor: [
+            'rgba(251, 207, 232, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const industryCtx = document.getElementById('industryChart').getContext('2d');
+    new Chart(industryCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Software Development', 'IT Services', 'Tech/Internet', 'Staffing & Recruiting', 'Design Services'],
+        datasets: [{
+          data: [27, 14.1, 5.9, 5.2, 3.7],
+          backgroundColor: [
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const seniorityCtx = document.getElementById('seniorityChart').getContext('2d');
+    new Chart(seniorityCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Entry', 'Senior', 'Director', 'Manager', 'Owner'],
+        datasets: [{
+          data: [39.6, 23, 4.4, 3.7, 3.7],
+          backgroundColor: [
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const companySizeCtx = document.getElementById('companySizeChart').getContext('2d');
+    new Chart(companySizeCtx, {
+      type: 'pie',
+      data: {
+        labels: ['10,001+ employees', '11-50', '1-10', '51-200', '501-1000'],
+        datasets: [{
+          data: [18.9, 14.8, 9.6, 9.6, 5.2],
+          backgroundColor: [
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(251, 207, 232, 0.6)',
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    const companyCtx = document.getElementById('companyChart').getContext('2d');
+    new Chart(companyCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Rural King', 'Coding Temple', 'Amazon', 'Upwork', 'TrueCoders'],
+        datasets: [{
+          data: [2.6, 1.5, 1.5, 1.1, 1.1],
+          backgroundColor: [
+            'rgba(236, 72, 153, 0.6)',
+            'rgba(244, 114, 182, 0.6)',
+            'rgba(253, 186, 116, 0.6)',
+            'rgba(252, 165, 165, 0.6)',
+            'rgba(251, 207, 232, 0.6)'
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
   </script>
 </body>
 </html>
