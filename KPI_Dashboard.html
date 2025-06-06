@@ -37,6 +37,7 @@
     </div>
   </header>
 
+
   <section class="py-20 px-6 max-w-5xl mx-auto text-center">
     <h1 class="text-5xl font-littlebubble text-pink-700 mb-6">KPI Dashboard 📊</h1>
     <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
@@ -59,10 +60,18 @@
         </div>
       </div>
       <canvas id="kpiChart" class="mt-10"></canvas>
+
     </section>
 
       <section id="demographics" class="mt-16">
         <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+
+
+
+    </section>
+
+    <section id="demographics" class="mt-16">
+      <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <h3 class="text-xl font-semibold mb-2">Job Title</h3>
@@ -89,6 +98,7 @@
           <canvas id="companyChart"></canvas>
         </div>
       </div>
+
     </section>
 
     <section id="post-performance" class="mt-16 text-left">
@@ -182,6 +192,7 @@
           <div id="instagram-map" class="h-96 rounded-lg shadow"></div>
         </div>
       </div>
+
     </section>
   </section>
 
@@ -191,6 +202,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
   <script>
     function toggleKPIs() {
       const kpiSection = document.getElementById('executive-kpis');
@@ -343,6 +355,11 @@
       const companyCtx = document.getElementById('companyChart').getContext('2d');
       new Chart(companyCtx, {
         type: 'pie',
+
+    const companyCtx = document.getElementById('companyChart').getContext('2d');
+    new Chart(companyCtx, {
+      type: 'pie',
+
       data: {
         labels: ['Rural King', 'Coding Temple', 'Amazon', 'Upwork', 'TrueCoders'],
         datasets: [{
@@ -361,6 +378,7 @@
           legend: { position: 'bottom' }
         }
       }
+
       });
 
       const fbCities = [
@@ -406,6 +424,7 @@
 
       initCityMap('facebook-map', fbCities, '#ec4899');
       initCityMap('instagram-map', igCities, '#7c3aed');
+
   </script>
 </body>
 </html>
