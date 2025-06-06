@@ -87,8 +87,15 @@
 
     </section>
 
+      <section id="demographics" class="mt-16">
+        <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+
+
+    </section>
+
     <section id="demographics" class="mt-16">
       <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <h3 class="text-xl font-semibold mb-2">Job Title</h3>
@@ -115,6 +122,81 @@
           <canvas id="companyChart"></canvas>
         </div>
       </div>
+
+    </section>
+
+    <section id="post-performance" class="mt-16 text-left">
+      <h2 class="text-2xl font-semibold mb-8 text-center">Recent Post Performance</h2>
+      <div class="space-y-8">
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326839399520894976" class="text-pink-600 hover:underline">Post on May 14, 2025 at 9:00 PM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 2,162</p>
+          <p><strong>Members Reached:</strong> 1,574</p>
+          <p><strong>Reactions:</strong> 38</p>
+          <p><strong>Comments:</strong> 4</p>
+          <p><strong>Reposts:</strong> 1</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Retail Consultant</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Design Specialist</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7328937325730713601" class="text-pink-600 hover:underline">Post on May 16, 2025 at 12:20 AM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 975</p>
+          <p><strong>Members Reached:</strong> 684</p>
+          <p><strong>Reactions:</strong> 15</p>
+          <p><strong>Comments:</strong> 7</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 16, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Account Manager</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Higher Education</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 16, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Dental Assisting Instructor</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326841046334615552" class="text-pink-600 hover:underline">Post on May 14, 2025 at 5:30 PM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 663</p>
+          <p><strong>Members Reached:</strong> 458</p>
+          <p><strong>Reactions:</strong> 11</p>
+          <p><strong>Comments:</strong> 10</p>
+          <p><strong>Reposts:</strong> 1</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Technology Technician</li>
+            <li>Top location: Greater Melbourne Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Research Assistant</li>
+            <li>Top location: Greater Melbourne Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+      </div>
+
     </section>
   </section>
 
@@ -156,7 +238,6 @@
         }
       }
     });
-
 
     const jobTitleCtx = document.getElementById('jobTitleChart').getContext('2d');
     new Chart(jobTitleCtx, {
