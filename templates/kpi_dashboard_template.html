@@ -32,8 +32,22 @@
 </head>
 <body>
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-center items-center">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
+      <nav>
+        <ul class="flex space-x-6 text-md font-medium">
+          <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+          <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+          <li><a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a></li>
+          <li><a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a></li>
+          <li><a href="portfolio.html" class="hover:text-pink-500">Portfolio</a></li>
+          <li><a href="modeling.html" class="hover:text-pink-500">Modeling</a></li>
+          <li><a href="resume.html" class="hover:text-pink-500">Resume</a></li>
+          <li><a href="KPI_Dashboard.html" class="hover:text-pink-500">KPI Dashboard</a></li>
+          <li><a href="travel.html" class="hover:text-pink-500">Travel</a></li>
+          <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -46,16 +60,16 @@
     <section id="executive-kpis" class="mt-6">
       <h2 class="text-2xl font-semibold mb-4">
         Overall Performance
-        <span class="block text-sm text-gray-500">3/9/2025 - 6/6/2025</span>
+        <span class="block text-sm text-gray-500">{{ date_range }}</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="p-6 bg-white rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-2">Impressions</h3>
-          <p class="text-3xl font-bold text-pink-600">11,004</p>
+          <p class="text-3xl font-bold text-pink-600">{{ impressions }}</p>
         </div>
         <div class="p-6 bg-white rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-2">Members Reached</h3>
-          <p class="text-3xl font-bold text-pink-600">4,797</p>
+          <p class="text-3xl font-bold text-pink-600">{{ members_reached }}</p>
         </div>
       </div>
       <canvas id="kpiChart" class="mt-10"></canvas>
@@ -94,73 +108,32 @@
     <section id="post-performance" class="mt-16 text-left">
       <h2 class="text-2xl font-semibold mb-8 text-center">Recent Post Performance</h2>
       <div class="space-y-8">
+        {% for post in linkedin_posts %}
         <div class="p-6 bg-white rounded-lg shadow-md">
           <h3 class="text-xl font-semibold">
-            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326839399520894976" class="text-pink-600 hover:underline">Post on May 14, 2025 at 9:00 PM</a>
+            <a href="{{ post.url }}" class="text-pink-600 hover:underline">Post on {{ post.date }} at {{ post.time }}</a>
           </h3>
-          <p class="mt-2"><strong>Impressions:</strong> 2,162</p>
-          <p><strong>Members Reached:</strong> 1,574</p>
-          <p><strong>Reactions:</strong> 38</p>
-          <p><strong>Comments:</strong> 4</p>
-          <p><strong>Reposts:</strong> 1</p>
-          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <p class="mt-2"><strong>Impressions:</strong> {{ post.impressions }}</p>
+          <p><strong>Members Reached:</strong> {{ post.members_reached }}</p>
+          <p><strong>Reactions:</strong> {{ post.reactions }}</p>
+          <p><strong>Comments:</strong> {{ post.comments }}</p>
+          {% if post.reposts is not none %}
+          <p><strong>Reposts:</strong> {{ post.reposts }}</p>
+          {% endif %}
+          <h4 class="mt-4 font-semibold">Reactions Highlights ({{ post.date }} to Jun 6, 2025)</h4>
           <ul class="list-disc list-inside text-sm">
-            <li>Top job title: Retail Consultant</li>
-            <li>Top location: New York City Metropolitan Area</li>
-            <li>Top industry: Retail Apparel and Fashion</li>
+            <li>Top job title: {{ post.top_react_job }}</li>
+            <li>Top location: {{ post.top_react_location }}</li>
+            <li>Top industry: {{ post.top_react_industry }}</li>
           </ul>
-          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <h4 class="mt-4 font-semibold">Comments Highlights ({{ post.date }} to Jun 6, 2025)</h4>
           <ul class="list-disc list-inside text-sm">
-            <li>Top job title: Design Specialist</li>
-            <li>Top location: New York City Metropolitan Area</li>
-            <li>Top industry: Retail Apparel and Fashion</li>
+            <li>Top job title: {{ post.top_comment_job }}</li>
+            <li>Top location: {{ post.top_comment_location }}</li>
+            <li>Top industry: {{ post.top_comment_industry }}</li>
           </ul>
         </div>
-
-        <div class="p-6 bg-white rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">
-            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7328937325730713601" class="text-pink-600 hover:underline">Post on May 16, 2025 at 12:20 AM</a>
-          </h3>
-          <p class="mt-2"><strong>Impressions:</strong> 975</p>
-          <p><strong>Members Reached:</strong> 684</p>
-          <p><strong>Reactions:</strong> 15</p>
-          <p><strong>Comments:</strong> 7</p>
-          <h4 class="mt-4 font-semibold">Reactions Highlights (May 16, 2025 to Jun 6, 2025)</h4>
-          <ul class="list-disc list-inside text-sm">
-            <li>Top job title: Account Manager</li>
-            <li>Top location: New York City Metropolitan Area</li>
-            <li>Top industry: Higher Education</li>
-          </ul>
-          <h4 class="mt-4 font-semibold">Comments Highlights (May 16, 2025 to Jun 6, 2025)</h4>
-          <ul class="list-disc list-inside text-sm">
-            <li>Top job title: Dental Assisting Instructor</li>
-            <li>Top location: New York City Metropolitan Area</li>
-            <li>Top industry: Retail Apparel and Fashion</li>
-          </ul>
-        </div>
-
-        <div class="p-6 bg-white rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">
-            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326841046334615552" class="text-pink-600 hover:underline">Post on May 14, 2025 at 5:30 PM</a>
-          </h3>
-          <p class="mt-2"><strong>Impressions:</strong> 663</p>
-          <p><strong>Members Reached:</strong> 458</p>
-          <p><strong>Reactions:</strong> 11</p>
-          <p><strong>Comments:</strong> 10</p>
-          <p><strong>Reposts:</strong> 1</p>
-          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
-          <ul class="list-disc list-inside text-sm">
-            <li>Top job title: Technology Technician</li>
-            <li>Top location: Greater Melbourne Area</li>
-            <li>Top industry: Retail Apparel and Fashion</li>
-          </ul>
-          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
-          <ul class="list-disc list-inside text-sm">
-            <li>Top job title: Research Assistant</li>
-            <li>Top location: Greater Melbourne Area</li>
-            <li>Top industry: Retail Apparel and Fashion</li>
-          </ul>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
@@ -204,7 +177,7 @@
         labels: ['Impressions', 'Members Reached'],
         datasets: [{
           label: 'Overall Performance',
-          data: [11004, 4797],
+          data: [{{ impressions }}, {{ members_reached }}],
           backgroundColor: [
             'rgba(236, 72, 153, 0.6)',
             'rgba(251, 207, 232, 0.6)'
