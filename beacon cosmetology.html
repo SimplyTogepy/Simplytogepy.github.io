@@ -3,40 +3,19 @@ You said:
 fix this code to be pretty again.
 
 <style>
-  @font-face {
-    font-family: 'Wasted Vindey';
-    src: url('https://simplytogepy.github.io/fonts/Wasted-Vindey.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Little Bubble';
-    src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Hello Daisy';
-    src: url('https://simplytogepy.github.io/fonts/HelloDaisy.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-
   body {
-    font-family: 'Wasted Vindey', serif;
+    font-family: Georgia, serif;
     background-color: #fff7f9;
     color: #333;
     position: relative;
   }
 
   .font-littlebubble {
-    font-family: 'Little Bubble', cursive;
+    font-family: Georgia, serif;
   }
 
   .font-hellodaisy {
-    font-family: 'Hello Daisy', cursive;
+    font-family: Georgia, serif;
   }
 
   .carousel-glow {
@@ -135,15 +114,16 @@ fix this code to be pretty again.
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <h1 class="text-3xl font-extrabold tracking-wide text-pink-600 font-hellodaisy">Celeste Greene</h1>
      <nav class="space-x-6 text-md font-medium">
-  <a href="#about" class="hover:text-pink-500 font-littlebubble">About</a>
-  <a href="#portfolio" class="hover:text-pink-500 font-littlebubble">Projects</a>
-  <a href="#beacon" class="hover:text-pink-500 font-littlebubble">Beacon Award</a>
-  <a href="#modeling" class="hover:text-pink-500 font-littlebubble">Modeling</a>
-  <a href="#disability" class="hover:text-pink-500 font-littlebubble">Disability Journey</a>
-  <a href="#travel" class="hover:text-pink-500 font-littlebubble">Travel & Humanity</a>
-  <a href="#contact" class="hover:text-pink-500 font-littlebubble">Contact</a>
-  <a href="resume.html" class="hover:text-pink-500 font-littlebubble">Resume</a> <!-- Add this -->
-</nav>
+        <a href="index.html" class="hover:text-pink-500">Home</a>
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
+        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
+        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -483,12 +463,16 @@ Great question! Since you've already created each page (index.html, about.html, 
 Each file already contains a navigation <nav> like this:
 
 <nav class="space-x-6 text-md font-medium">
-  <a href="about.html" class="hover:text-pink-500">About</a>
-  <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
-  <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
-  <a href="travel.html" class="hover:text-pink-500">Travel</a>
-  <a href="contact.html" class="hover:text-pink-500">Contact</a>
-</nav>
+        <a href="index.html" class="hover:text-pink-500">Home</a>
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
+        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
+        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
 Just make sure each HTML file includes this exact navigation bar, with the current page highlighted like this:
 
 <a href="about.html" class="text-pink-600 underline">About</a>
@@ -730,12 +714,8 @@ Asked ChatGPT
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/styles.css">
   <style>
-    @font-face {
-      font-family: 'Little Bubble';
-      src: url('https://simplytogepy.github.io/fonts/LittleBubble-Regular.woff') format('woff');
-    }
     body {
-      font-family: 'Little Bubble', cursive;
+      font-family: Georgia, serif;
       background-color: #fff7f9;
       color: #333;
     }
@@ -746,10 +726,14 @@ Asked ChatGPT
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
       <nav class="space-x-6 text-md font-medium">
+        <a href="index.html" class="hover:text-pink-500">Home</a>
         <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
+        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
         <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
         <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
-        <a href="travel.html" class="text-pink-600 underline">Travel</a>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
         <a href="contact.html" class="hover:text-pink-500">Contact</a>
       </nav>
     </div>
@@ -1079,9 +1063,13 @@ Beacon Cosmetology
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600">Celeste Greene</a>
       <nav class="space-x-6 text-md font-medium">
+        <a href="index.html" class="hover:text-pink-500">Home</a>
         <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
+        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
         <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
         <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
         <a href="travel.html" class="hover:text-pink-500">Travel</a>
         <a href="contact.html" class="hover:text-pink-500">Contact</a>
       </nav>
