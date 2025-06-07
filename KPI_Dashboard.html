@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KPI Dashboard | Celeste Greene</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <style>
@@ -32,6 +33,7 @@
 </head>
 <body>
   <header class="bg-white shadow-md sticky top-0 z-10 border-b-2 border-pink-200">
+
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
     <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
     <nav>
@@ -58,6 +60,174 @@
   </div>
 </header>
 
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-center items-center">
+      <a href="index.html" class="text-3xl font-extrabold tracking-wide text-pink-600 font-littlebubble">Celeste Greene</a>
+
+      <nav class="space-x-6 text-md font-medium">
+
+  <a href="index.html" class="hover:text-pink-500">Home</a>
+  <a href="about.html" class="hover:text-pink-500">About</a>
+  <div class="relative inline-block group">
+    <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+    <div class="hidden group-hover:block absolute bg-white border border-pink-200 mt-2 rounded-md py-2">
+      <a href="beacon cosmetology.html" class="block px-4 py-2 hover:bg-pink-100">Beacon</a>
+      <a href="little-shroomville.html" class="block px-4 py-2 hover:bg-pink-100 whitespace-nowrap">Little Shroomville</a>
+      <a href="modeling.html" class="block px-4 py-2 hover:bg-pink-100">Modeling</a>
+    </div>
+  </div>
+  <a href="resume.html" class="hover:text-pink-500">Resume</a>
+  <a href="travel.html" class="hover:text-pink-500">Travel</a>
+  <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      <section id="demographics" class="mt-16">
+        <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+
+    <section id="post-performance" class="mt-16 text-left">
+      <h2 class="text-2xl font-semibold mb-8 text-center">Recent Post Performance</h2>
+      <div class="space-y-8">
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326839399520894976" class="text-pink-600 hover:underline">Post on May 14, 2025 at 9:00 PM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 2,162</p>
+          <p><strong>Members Reached:</strong> 1,574</p>
+          <p><strong>Reactions:</strong> 38</p>
+          <p><strong>Comments:</strong> 4</p>
+          <p><strong>Reposts:</strong> 1</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Retail Consultant</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Design Specialist</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7328937325730713601" class="text-pink-600 hover:underline">Post on May 16, 2025 at 12:20 AM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 975</p>
+          <p><strong>Members Reached:</strong> 684</p>
+          <p><strong>Reactions:</strong> 15</p>
+          <p><strong>Comments:</strong> 7</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 16, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Account Manager</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Higher Education</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 16, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Dental Assisting Instructor</li>
+            <li>Top location: New York City Metropolitan Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold">
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7326841046334615552" class="text-pink-600 hover:underline">Post on May 14, 2025 at 5:30 PM</a>
+          </h3>
+          <p class="mt-2"><strong>Impressions:</strong> 663</p>
+          <p><strong>Members Reached:</strong> 458</p>
+          <p><strong>Reactions:</strong> 11</p>
+          <p><strong>Comments:</strong> 10</p>
+          <p><strong>Reposts:</strong> 1</p>
+          <h4 class="mt-4 font-semibold">Reactions Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Technology Technician</li>
+            <li>Top location: Greater Melbourne Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+          <h4 class="mt-4 font-semibold">Comments Highlights (May 14, 2025 to Jun 6, 2025)</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Top job title: Research Assistant</li>
+            <li>Top location: Greater Melbourne Area</li>
+            <li>Top industry: Retail Apparel and Fashion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+        <a href="index.html" class="hover:text-pink-500">Home</a>
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <div class="relative inline-block group">
+          <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+          <div class="hidden group-hover:block absolute bg-white border border-pink-200 mt-2 rounded-md py-2">
+            <a href="beacon cosmetology.html" class="block px-4 py-2 hover:bg-pink-100">Beacon</a>
+            <a href="little-shroomville.html" class="block px-4 py-2 hover:bg-pink-100 whitespace-nowrap">Little Shroomville</a>
+            <a href="modeling.html" class="block px-4 py-2 hover:bg-pink-100">Modeling</a>
+          </div>
+        </div>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <canvas id="revenueChart"></canvas>
+        <canvas id="customerChart"></canvas>
+      </div>
+    const months = ["Jan","Feb","Mar","Apr","May","Jun"];
+    const revenueData = [12000,15000,18000,13000,17000,19000];
+    const customerData = [300,400,350,500,450,550];
+
+    const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+    new Chart(revenueCtx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Revenue',
+          data: revenueData,
+          borderColor: '#b85c38',
+          backgroundColor: 'rgba(184,92,56,0.2)',
+          tension: 0.4
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    const customerCtx = document.getElementById('customerChart').getContext('2d');
+    new Chart(customerCtx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'New Customers',
+          data: customerData,
+          backgroundColor: '#b85c38'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+        <a href="about.html" class="hover:text-pink-500">About</a>
+        <a href="beacon cosmetology.html" class="hover:text-pink-500">Beacon</a>
+        <a href="little-shroomville.html" class="hover:text-pink-500">Little Shroomville</a>
+        <a href="portfolio.html" class="hover:text-pink-500">Portfolio</a>
+        <a href="modeling.html" class="hover:text-pink-500">Modeling</a>
+        <a href="resume.html" class="hover:text-pink-500">Resume</a>
+        <a href="travel.html" class="hover:text-pink-500">Travel</a>
+        <a href="contact.html" class="hover:text-pink-500">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
   <section class="py-20 px-6 max-w-5xl mx-auto text-center">
     <h1 class="text-5xl font-littlebubble text-pink-700 mb-6">KPI Dashboard 📊</h1>
     <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
@@ -80,10 +250,16 @@
         </div>
       </div>
       <canvas id="kpiChart" class="mt-10"></canvas>
+
     </section>
 
       <section id="demographics" class="mt-16">
         <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+=======
+
+    <section id="demographics" class="mt-16">
+      <h2 class="text-2xl font-semibold mb-8">Demographics of followers</h2>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <h3 class="text-xl font-semibold mb-2">Job Title</h3>
@@ -110,6 +286,7 @@
           <canvas id="companyChart"></canvas>
         </div>
       </div>
+
     </section>
 
     <section id="post-performance" class="mt-16 text-left">
@@ -203,6 +380,7 @@
           <div id="instagram-map" class="h-96 rounded-lg shadow"></div>
         </div>
       </div>
+
     </section>
   </section>
 
@@ -212,6 +390,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
   <script>
     function toggleKPIs() {
       const kpiSection = document.getElementById('executive-kpis');
@@ -361,9 +540,12 @@
       }
     });
 
-      const companyCtx = document.getElementById('companyChart').getContext('2d');
-      new Chart(companyCtx, {
-        type: 'pie',
+     
+    const companyCtx = document.getElementById('companyChart').getContext('2d');
+    new Chart(companyCtx, {
+      type: 'pie',
+
+
       data: {
         labels: ['Rural King', 'Coding Temple', 'Amazon', 'Upwork', 'TrueCoders'],
         datasets: [{
@@ -382,6 +564,7 @@
           legend: { position: 'bottom' }
         }
       }
+
       });
 
       const fbCities = [
@@ -427,6 +610,7 @@
 
       initCityMap('facebook-map', fbCities, '#ec4899');
       initCityMap('instagram-map', igCities, '#7c3aed');
+
   </script>
 </body>
 </html>
